@@ -1,37 +1,44 @@
+// URL untuk API
 const BASE_URL = "https://api.openf1.org/v1/drivers?session_key=latest";
 
+// Fungsi asinkron untuk mengambil data dari API
 async function fetchDrivers() {
   try {
+    // Mengirim permintaan GET ke API
     const response = await fetch(BASE_URL, {
       method: "GET",
     });
+    // Mengubah respon menjadi format JSON
     const data = await response.json();
     console.log("Drivers:", data);
     return data;
   } catch (error) {
+    // Menangani kesalahan saat mengambil data
     console.error("Error fetching drivers:", error);
-    return [];
+    return []; // Mengembalikan array kosong jika terjadi kesalahan
   }
 }
 
+// Menjalankan kode setelah seluruh dokumen selesai dipanggil
 document.addEventListener("DOMContentLoaded", async () => {
-  const driverList = document.getElementById("driver-list");
-  const searchInput = document.querySelector('input[type="search"]');
+  const driverList = document.getElementById("driver-list"); // daftar driver
+  const searchInput = document.querySelector('input[type="search"]'); // input pencarian
 
-  let drivers = await fetchDrivers();
+  let drivers = await fetchDrivers(); // Mengambil data dari API
 
-  // Function to get high-resolution image URL
+  // Fungsi untuk mendapatkan URL gambar
   const getHighQualityImageUrl = (url) => {
-    return url.replace(".transform/1col/image.png", "");
+    return url.replace(".transform/1col/image.png", ""); // Mengganti bagian URL untuk mendapatkan gambar kualitas tinggi
   };
 
+  // Fungsi untuk merender data ke dalam HTML
   const renderDrivers = (driversToRender) => {
-    driverList.innerHTML = ""; // Clear existing drivers
+    driverList.innerHTML = "";
     if (driversToRender.length > 0) {
       driversToRender.forEach((driver) => {
         const highQualityImageUrl = getHighQualityImageUrl(driver.headshot_url);
-        const card = document.createElement("div");
-        card.className = "col-md-4 mb-4";
+        const card = document.createElement("div"); // Membuat elemen div baru untuk kartu driver
+        card.className = "col-md-4 mb-4"; // Menambahkan kelas CSS ke elemen div
         card.innerHTML = `
           <div class="card card-container" onclick="viewDetails(${driver.driver_number})">
               <div class="position-relative">
@@ -47,30 +54,32 @@ document.addEventListener("DOMContentLoaded", async () => {
         driverList.appendChild(card);
       });
 
-      const images = document.querySelectorAll("img");
+      const images = document.querySelectorAll("img"); // Mengambil semua elemen gambar
       images.forEach((img) => {
         img.onerror = function () {
-          img.src = "Error.svg";
+          img.src = "Error.svg"; // Mengganti gambar jika terjadi kesalahan pemuatan
         };
       });
     } else {
-      driverList.innerHTML = "<p>No drivers found.</p>";
+      driverList.innerHTML = "<p>No drivers found.</p>"; // Menampilkan pesan jika tidak ada driver ditemukan
     }
   };
 
   if (driverList) {
-    renderDrivers(drivers);
+    renderDrivers(drivers); // Merender driver saat daftar driver ada
   }
 
+  // Event listener untuk input pencarian
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    const filteredDrivers = drivers.filter((driver) =>
-      driver.full_name.toLowerCase().includes(query)
+    const query = searchInput.value.toLowerCase(); // Mengambil nilai input dan mengubahnya menjadi huruf kecil
+    const filteredDrivers = drivers.filter(
+      (driver) => driver.full_name.toLowerCase().includes(query) // Memfilter driver berdasarkan input pencarian
     );
-    renderDrivers(filteredDrivers);
+    renderDrivers(filteredDrivers); // Merender driver yang sudah difilter
   });
 });
 
+// Fungsi untuk melihat detail driver berdasarkan nomor driver
 function viewDetails(driver_number) {
-  window.location.href = `details.html?driver_number=${driver_number}`;
+  window.location.href = `details.html?driver_number=${driver_number}`; // Mengarahkan ke halaman detail driver
 }
