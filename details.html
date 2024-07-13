@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Driver Details</title>
+    <!-- link bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- link css tambahan -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- bagian header dengan pengaturan padding vertikal 0 -->
     <header class="header py-0">
+      <!-- pengaturan navbar dengan tema dark dan expand pada layar ukuran large -->
       <nav class="navbar navbar-dark navbar-expand-lg">
+        <!-- fluid container untuk layout yang responsif -->
         <div class="container-fluid">
+          <!-- navbar brand dengan logo website -->
           <a
             class="navbar-brand py-0 d-flex align-items-center"
             href="index.html"
@@ -29,6 +35,7 @@
             />
             Formula 1
           </a>
+          <!-- Tombol toggle untuk navbar untuk layar ukuran kecil -->
           <button
             class="navbar-toggler"
             type="button"
@@ -40,17 +47,18 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Other nav items can go here if needed -->
-          </div>
+          <div class="collapse navbar-collapse" id="navbarNav"></div>
         </div>
       </nav>
     </header>
+    <!-- Bagian utama untuk menampilkan detail driver -->
     <div class="container driver-details mt-5">
+      <!-- Tombol kembali ke halaman utama driver -->
       <a href="index.html" class="btn btn-primary back-button"
         >Back to Drivers</a
       >
       <div class="row">
+        <!-- Kolom untuk menampilkan gambar driver -->
         <div class="col-md-4">
           <img
             src=""
@@ -59,6 +67,7 @@
             alt="Driver Image"
           />
         </div>
+        <!-- Kolom untuk menampilkan informasi detail driver -->
         <div class="col-md-8 driver-info">
           <h2 id="driver-name">Driver Name</h2>
           <p>
@@ -79,8 +88,10 @@
         </div>
       </div>
     </div>
+    <!-- link bootstrap dan popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <!-- link custom javascript -->
     <script src="details.js"></script>
   </body>
 </html>
