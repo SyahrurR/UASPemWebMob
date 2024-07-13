@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula 1 Drivers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header py-0">
+      <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand py-0 d-flex align-items-center" href="#">
+            <img
+              src="f1_logo.svg"
+              alt=""
+              width="50"
+              height="50"
+              class="d-inline-block align-top me-2"
+            />
+            Formula 1
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSearch"
+            aria-controls="navbarSearch"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSearch">
+            <form class="d-flex ms-auto w-100">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-5">
+      <div class="mb-4">
+        <span class="index-title">F1 Drivers 2024</span>
+      </div>
+      <div class="row" id="driver-list">
+        <!-- Example card, this will be populated dynamically -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 card-container">
+          <div class="card">
+            <img
+              src="https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png"
+              class="card-img-top"
+              alt="Max Verstappen"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Max Verstappen</h5>
+            </div>
+            <div class="card-number">1</div>
+          </div>
+        </div>
+        <!-- More cards will be added dynamically here -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

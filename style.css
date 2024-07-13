@@ -1,0 +1,188 @@
+/* Add your CSS styles here */
+@font-face {
+  font-family: "Formula1-Regular";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Regular/Formula1-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Formula1-Bold";
+  src: url("https://www.formula1.com/etc/designs/fom-website/fonts/F1Bold/Formula1-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card img {
+  object-fit: cover;
+}
+
+.index-title {
+  font-weight: 900;
+  font-size: 6vw;
+  font-family: "Formula1-Bold", Arial, sans-serif;
+  border-top: 4px solid #000000; /* Top border color */
+  border-right: 4px solid #000000; /* Right border color */
+  padding: 10px 0 0 0; /* Adjust padding as needed */
+  display: inline-block; /* Ensure borders are visible and fit the text */
+  margin: 0; /* Adjust margin as needed */
+  border-radius: 0 3vw 0 0;
+  width: 100%;
+  border-width: 1vw;
+}
+
+body {
+  margin: 0;
+  font-family: "Formula1-Regular", Arial, sans-serif;
+}
+
+.header {
+  background-color: #e10600; /* Formula 1 header background color */
+  color: #fff; /* Text color */
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  max-width: 150px; /* Adjust size as needed */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the logo */
+}
+
+.card-container {
+  position: relative;
+  border-radius: 10px; /* Rounded corners for the card */
+  overflow: hidden; /* Ensure border-radius is respected */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  z-index: 10;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.card-img-top {
+  border-top-left-radius: 10px; /* Round the top-left corner of the image */
+  border-top-right-radius: 10px; /* Round the top-right corner of the image */
+}
+
+.card {
+  cursor: pointer; /* Indicate that the card is clickable */
+  border: none; /* Remove default border */
+  position: relative; /* Ensure positioning context for border effect */
+}
+
+.card:hover {
+  border-top: 4px solid #007bff; /* Top border color */
+  border-right: 4px solid #007bff; /* Right border color */
+  border-bottom: 4px solid transparent; /* Optional: keep bottom border transparent */
+  border-left: 4px solid transparent; /* Optional: keep left border transparent */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow effect for better visual */
+  border-top-left-radius: 10px; /* Keep top-left corner rounded */
+  border-top-right-radius: 10px; /* Keep top-right corner rounded */
+  border-bottom-left-radius: 10px; /* Keep bottom-left corner rounded */
+  border-bottom-right-radius: 10px; /* Keep bottom-right corner rounded */
+}
+
+.card-body {
+  position: relative;
+  z-index: 1; /* Ensure card body is above the image */
+}
+
+.navbar-toggler {
+  border: none; /* Remove default border from the toggle button */
+}
+
+form.d-flex {
+  flex-grow: 1;
+}
+
+.form-control {
+  max-width: 500px; /* Adjust this max-width as needed */
+  width: 100%;
+  margin: 0 auto; /* Center the search bar */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30"%3E%3Cpath stroke="%23333333" stroke-width="2" d="M4 6h22M4 15h22M4 24h22" /%3E%3C/svg%3E'); /* Hamburger icon SVG */
+}
+
+.driver-details {
+  margin-top: 20px;
+}
+
+.driver-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd; /* Border for the image */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+.driver-info {
+  padding-left: 20px;
+}
+
+.driver-info h2 {
+  margin-top: 0;
+}
+
+.driver-info p {
+  margin: 5px 0;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  background-color: #e10600;
+}
+
+@media (max-width: 576px) {
+  .form-control {
+    font-size: 0.9rem; /* Adjust font size for very small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .driver-info {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .driver-details {
+    text-align: center;
+  }
+
+  .driver-image {
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    text-align: center; /* Center-align content when collapsed */
+  }
+
+  .form-control {
+    max-width: 100%; /* Ensure it takes full width on smaller screens */
+  }
+}
